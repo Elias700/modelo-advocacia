@@ -2,6 +2,8 @@ import { practiceAreas } from '../features/home/data'
 import { siteConfig } from '../core/site-config'
 import { Icon } from '../shared/Icon'
 
+const copyrightYear = new Date().getFullYear()
+
 export default function SiteFooter() {
   return (
     <footer className="site-footer">
@@ -16,7 +18,7 @@ export default function SiteFooter() {
         <div className="footer-column footer-contact"><h2>Contato demonstrativo</h2><p><Icon name="mail" size={16} /> {siteConfig.contact.email}</p><p><Icon name="phone" size={16} /> {siteConfig.contact.phone}</p><span className="contact-muted">Canais fictícios, não monitorados.</span><a className="footer-contact-link" href="#contato">Ir ao formulário <Icon name="arrow" size={14} /></a></div>
       </div>
       <div className="wrap privacy-wrap"><details id="privacidade" className="privacy-details"><summary>Política de privacidade demonstrativa</summary><p>Esta página é um protótipo. O formulário não transmite, processa nem armazena as informações digitadas. Não há integração de analytics ou cookies próprios. Fontes e fotografias são carregadas de serviços externos, que podem receber dados técnicos de conexão conforme suas próprias políticas. Esta nota não substitui uma política de privacidade para uma operação real.</p></details></div>
-      <div className="footer-bottom"><div className="wrap"><span>© {new Date().getFullYear()} Almeida &amp; Associados · Projeto demonstrativo</span><div className="footer-credit">{siteConfig.portfolioUrl ? <a href={siteConfig.portfolioUrl} target="_blank" rel="noreferrer">Desenvolvido por ER Web <Icon name="arrow" size={13} /></a> : <span>Desenvolvido por ER Web</span>}</div></div></div>
+      <div className="footer-bottom"><div className="wrap"><span>© {copyrightYear} Almeida &amp; Associados · Projeto demonstrativo</span><div className="footer-credit">{siteConfig.portfolioUrl ? <a href={siteConfig.portfolioUrl} target="_blank" rel="noreferrer">Desenvolvido por ER Web <Icon name="arrow" size={13} /></a> : <span>Desenvolvido por ER Web</span>}</div></div></div>
     </footer>
   )
 }

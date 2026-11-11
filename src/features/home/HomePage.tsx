@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { unsplashImages } from '../../core/site-config'
+import lawyerHeroImage from '../../assets/hero-lawyer.png'
 import { Icon } from '../../shared/Icon'
 import { AboutSection } from './components/AboutSection'
 import { ContactSection } from './components/ContactSection'
@@ -21,7 +21,7 @@ export default function HomePage() {
     gsap.registerPlugin(ScrollTrigger)
     const context = gsap.context(() => {
       gsap.from('.hero-copy > *', { y: 26, opacity: 0, duration: 0.85, stagger: 0.11, ease: 'power3.out', clearProps: 'all' })
-      gsap.from('.hero-portrait-wrap', { x: 40, opacity: 0, duration: 1.15, ease: 'power2.out', delay: 0.15, clearProps: 'all' })
+      gsap.from('.hero-portrait', { y: 24, opacity: 0, duration: 1.15, ease: 'power2.out', delay: 0.15, clearProps: 'all' })
       gsap.from('.hero-line', { scaleX: 0, transformOrigin: 'left center', duration: 1.1, delay: 0.5, ease: 'power2.inOut', clearProps: 'transform' })
 
       gsap.utils.toArray<HTMLElement>('.reveal-item', root).forEach((element) => {
@@ -61,7 +61,7 @@ export default function HomePage() {
           </div>
           <div className="hero-visual">
             <div className="hero-geometry" aria-hidden="true"><span className="geometry-orbit orbit-one" /><span className="geometry-orbit orbit-two" /><span className="geometry-core" /></div>
-            <figure className="hero-portrait-wrap"><img className="hero-portrait" src={unsplashImages.hero} width="880" height="1080" fetchPriority="high" alt="Retrato profissional ilustrativo; não representa integrante do escritório fictício" /><figcaption>Retrato ilustrativo · Unsplash</figcaption></figure>
+            <img className="hero-portrait" src={lawyerHeroImage} width="1122" height="1402" fetchPriority="high" alt="Retrato ilustrativo de advogada com blazer azul-marinho, braços cruzados e expressão acolhedora" />
             <span className="hero-visual-index" aria-hidden="true">A&amp;A <i>—</i> 01</span>
           </div>
         </div>
